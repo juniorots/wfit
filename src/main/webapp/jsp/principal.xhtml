@@ -14,17 +14,116 @@
         <ui:define name="centro">
             <div class="conteudo">
                 <h:form id="form">
-					<ui:include src="vitrinePai.xhtml"/> 
+					<ui:include src="../WEB-INF/template/menu.xhtml"/>
 					
-					<section class="mainContent clearfix">
-        				<div class="container">		
-							<ui:include src="colecaoProduto.xhtml"/>
-							<ui:include src="destaqueProduto.xhtml"/>
-						</div>
-					</section>
-					
-					<ui:include src="parceiros.xhtml"/>
-                </h:form>
+					<section id="intro" class="slidepage image-background">
+			        <div class="bgWrap dimBg patternBg">
+			          <div class="container">
+			            
+			              <div class="col-md-10 col-md-offset-1 vertical-center">
+			                <div class="text-center margin-offset animated bounceInDown">
+			                    <div class="special-element center"><span></span></div>
+			                    <h2>Para uma vida saudável</h2>
+			                    <h1>WFITNESS</h1>
+			                    <p>
+			                      <a class="btn scroll" href="#textcontent">Descubra</a>
+			                    </p>
+			                  
+			                </div>
+			              </div>
+			              <a class="scrolldown scroll btn-scroll" href="#textcontent"><span class="fa fa-arrow-down"></span></a>
+			            
+			          </div>
+			        </div>
+			      </section>
+				      
+			      <section id="textcontent" class="slidepage image-background">
+			        <div class="bgWrap dimBg patternBg">
+			          <div class="container">
+			            
+			              <div class="col-md-10 col-md-offset-2">
+			                <div class="content wow slideInUp animated" data-wow-duration="0.6s">
+			                  <div class="special-element"><span></span></div>
+			                  <h1>TEXT CONTENT</h1>
+			                  <div class="row">
+			                    <div class="col-md-3 col-sm-3 col-lg-2">
+			                      <span class="big-icon fa fa-desktop"></span>
+			                    </div>
+			                    <div class="col-md-9 col-sm-9 col-lg-10">
+			                      <p>
+			                      Fresh is a fully responsive, modern one page template. It contains all basic features for your content. It's full of fresh colors which can attract users. All images are included in theme and there are free to use and modify. Or there is also possiblity to use your own background images too.
+			                      </p>
+			                    </div>
+			                  </div>
+			                  <h2>Two theme variations</h2>
+			                  <p>
+			                    Template is available in 2 variations. First variation with background images and second with colour gradients. You can choose which one fit for you better, or you can simple change colors and gradients in less file. Or you can change provided images with your own.
+			                     
+			                  </p>
+			                  <a href="#" class="btn" data-toggle="modal" data-target="#modalText">READ MORE</a>
+			                  <!--
+			                  <a href="#" class="btn btn-lg">READ MORE</a>
+			                  <a href="#" class="btn btn-sm">READ MORE</a>
+			                  <a href="#" class="btn btn-xs">READ MORE</a>
+			                -->
+			                </div>
+			              </div>
+			              <a class="scrolldown scroll btn-scroll" href="#grid"><span class="fa fa-arrow-down"></span></a>
+			            
+			          </div>
+			        </div>
+			      </section>
+			      
+			      <section id="contact" class="slidepage image-background">
+			        <div class="bgWrap dimBg patternBg">
+			          <div class="container">
+			            
+			              <div class="col-md-10 col-md-offset-2">
+			                <div class="content">
+			                  <div class="special-element"><span></span></div>
+			                  <h1>FALE CONOSCO <small>Acredite, é importante!</small></h1>
+			
+			                  <div class="row">
+			                    <div class="col-md-3 col-sm-4 col-text-right">
+			                      <address>
+			                        6th Some Street<br/>
+			                        851 01  Bratislava<br/>
+			                        Slovak republic<br/>
+			                        <br/>
+			                        <abbr title="Phone">+421(0) 555 555 555</abbr><br/>
+			                        <a href="mailto:fresh@support.com">fresh@support.com</a><br/>
+			                      </address>
+			                    </div>
+			                    <div class="col-md-8 col-sm-8">
+			                      <form class="js-contact-form" role="form" action="#" method="post" >
+			                        <div class="form-group name">
+			                          <input name="name" type="name" class="form-control name" id="exampleInputName1" placeholder="Enter name..." />
+			                          <!-- <span class="form-error">please enter name</span> -->
+			                        </div>
+			                        <div class="form-group email">
+			                          <input name="email" type="email" class="form-control email" id="exampleInputEmail1" placeholder="Enter email..." />
+			                        </div>
+			                        <div class="form-group message">
+			                          <textarea name="message" class="form-control message" rows="4" placeholder="Message" ></textarea>
+			                          <!-- <span class="form-error">please enter message</span> -->
+			                        </div>
+			                        
+			                        <button type="submit" class="btn btn-default">ENVIAR</button>
+			
+			                        <div id="msgInfo"></div>
+			                      </form>
+			                    </div>
+			                  </div>
+			                </div>
+			              </div>
+			
+			              <a class="scrolldown scroll btn-scroll" href="#intro"><span class="fa fa-arrow-up"></span></a>
+			            
+			          </div>
+			        </div>
+			      </section>
+				      
+	            </h:form>
             </div>
         </ui:define>
     </ui:composition>
