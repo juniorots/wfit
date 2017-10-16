@@ -28,7 +28,7 @@ import lombok.Cleanup;
 public class ClienteMB implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private Cliente cliente= null;
+	private Cliente cliente= new Cliente();
     private Collection<Cliente> listaCliente = new ArrayList();
     
     /**
@@ -109,7 +109,7 @@ public class ClienteMB implements Serializable {
         entManager.getTransaction().begin();
         ClienteDAO dao = new ClienteDAO(entManager);
         
-        getCliente().setSenha( Util.cifrar( getCliente().getSenha() ) );
+//        getCliente().setSenha( Util.cifrar( getCliente().getSenha() ) );
         Cliente usInserido = dao.insert( getCliente() );
         entManager.getTransaction().commit();
         
@@ -120,6 +120,39 @@ public class ClienteMB implements Serializable {
         } else {
             Util.montarMensagem(FacesMessage.SEVERITY_ERROR, "Falha no cadastro. Operação cancelada.");
         }
+    }
+    
+    /**
+     * Responsavel por enviar o e-mail com a mensagem do cliente e registra-lo na base de dados.
+     */
+    public void enviarNotificacao() {
+    	
+    	if (bloquearEnvioNotificacao( getCliente() )) {
+    		Util.montarMensagem(FacesMessage.SEVERITY_INFO, "É necessário preencher todos os campos.");
+    		return;
+    	}
+    	
+    	@Cleanup
+        final EntityManagerFactory entityFactory = Persistence.createEntityManagerFactory("databaseDefault");
+        
+        @Cleanup
+        final EntityManager entManager = entityFactory.createEntityManager();
+        entManager.getTransaction().begin();
+        ClienteDAO dao = new ClienteDAO(entManager);
+        Cliente usInserido = dao.insert( getCliente() );
+        
+        entManager.getTransaction().commit();
+        
+        //TO-DO: CONTINUAR IMPLEMENTACAO DE ENVIO DE EMAIL AQUI... CLASSE: EnviarEmail
+        
+    }
+    
+    /**
+     * Verifica a necessidade de preenchimento dos campos
+     * @return
+     */
+    public boolean bloquearEnvioNotificacao(Cliente cliente) {
+    	return Util.isEmpty(cliente.getEmail()) || Util.isEmpty(cliente.getNome()) || Util.isEmpty(cliente.getMensagem()); 
     }
     
     /*

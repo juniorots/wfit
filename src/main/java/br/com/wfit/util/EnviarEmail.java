@@ -24,19 +24,21 @@ public class EnviarEmail {
      * @param assunto
      * @param conteudo 
      */
-    public static void tratarEnvio(ArrayList<String> emails, String assunto, String conteudo) {
+    public static void tratarEnvio(ArrayList<String> emails, String assunto, String conteudo, String... dadosRemetente) {
         HtmlEmail email = new HtmlEmail();
         
         try {
             email.setHostName(Constantes.HOST_NAME_GMAIL);
             email.addTo(Constantes.ADMINISTRADOR_1);
-            email.setFrom(Constantes.EMAIL_REMETENTE_GMAIL, "wfit - Administrador");
+            email.setFrom(Constantes.EMAIL_REMETENTE_GMAIL, "WFitness - Administrador");
             
             for (String tmp : emails) {
                 email.addBcc(tmp);
             }
             
-            email.setSubject(assunto);
+            String tmp = "<br /><br /><b>Nome: "+dadosRemetente[0]+"<br />Email: "+dadosRemetente[1]+"</b><br /><br />";
+            tmp += "<b>Conteúdo digitado pelo usuário: </b><br /><br />";
+            email.setSubject(tmp+assunto);
             
             // Trabalhando com imagem...
 //            URL url = new URL ("http://<ENDERECO DA IMAGEM AQUI...>");

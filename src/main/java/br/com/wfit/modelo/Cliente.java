@@ -27,15 +27,23 @@ public class Cliente extends DomainObject {
 	@NotNull
 	private String email;
 	
-	@NotNull
 	private String senha;
 	    
 	@Transient
 	private String confirmaSenha;
 	
 	@Temporal(DATE)
-    @NotNull
     private Date dtNascimento;
+	
+	private String mensagem;
+
+	public String getMensagem() {
+		return mensagem;
+	}
+
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
+	}
 
 	public String getNome() {
 		return nome;

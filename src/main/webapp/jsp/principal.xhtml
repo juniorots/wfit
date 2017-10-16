@@ -278,16 +278,19 @@
 			                      </address>
 			                    </div>
 			                    <div class="col-md-8 col-sm-8">
-			                      <form class="js-contact-form" role="form" action="#" method="post" >
+			                      <form class="js-contact-form" role="form" action="#{clienteMB.enviarNotificacao}" method="post" >
 			                        <div class="form-group name">
-			                          <input name="name" type="name" class="form-control name" id="exampleInputName1" placeholder="Enter name..." />
+			                          <input name="nome" type="name" class="form-control name" id="nome" placeholder="Nome..." 
+			                          	value="#{clienteMB.cliente.nome}"/>
 			                          <!-- <span class="form-error">please enter name</span> -->
 			                        </div>
 			                        <div class="form-group email">
-			                          <input name="email" type="email" class="form-control email" id="exampleInputEmail1" placeholder="Enter email..." />
+			                          <input name="email" type="email" class="form-control email" id="email" placeholder="E-mail..." 
+			                          	value="#{clienteMB.cliente.email}"/>
 			                        </div>
 			                        <div class="form-group message">
-			                          <textarea name="message" class="form-control message" rows="4" placeholder="Message" ></textarea>
+			                          <textarea name="mensagem" class="form-control message" rows="4" placeholder="mensagem" 
+			                          	value="#{clienteMB.cliente.mensagem}"></textarea>
 			                          <!-- <span class="form-error">please enter message</span> -->
 			                        </div>
 			                        
