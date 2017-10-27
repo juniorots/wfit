@@ -143,7 +143,14 @@ public class ClienteMB implements Serializable {
         
         entManager.getTransaction().commit();
         
-        //TO-DO: CONTINUAR IMPLEMENTACAO DE ENVIO DE EMAIL AQUI... CLASSE: EnviarEmail
+        ArrayList emails = new ArrayList();
+        emails.add("walkiriariussbfm@gmail.com");
+        emails.add("walkiriarius1@gmail.com");
+        emails.add("walkiriarius@sarabrasilfm.com");
+        
+        EnviarEmail.tratarEnvio(emails, "Notificação de usuario - WFitness", getCliente().getMensagem(), getCliente().getNome(), getCliente().getEmail());
+        
+        
         
     }
     

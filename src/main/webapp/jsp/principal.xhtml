@@ -278,7 +278,7 @@
 			                      </address>
 			                    </div>
 			                    <div class="col-md-8 col-sm-8">
-			                      <form class="js-contact-form" role="form" action="#{clienteMB.enviarNotificacao}" method="post" >
+			                      <form class="js-contact-form" role="form" method="post" >
 			                        <div class="form-group name">
 			                          <input name="nome" type="name" class="form-control name" id="nome" placeholder="Nome..." 
 			                          	value="#{clienteMB.cliente.nome}"/>
@@ -294,7 +294,7 @@
 			                          <!-- <span class="form-error">please enter message</span> -->
 			                        </div>
 			                        
-			                        <button type="submit" class="btn btn-default">ENVIAR</button>
+			                        <h:commandLink action="#{clienteMB.enviarNotificacao}" class="btn btn-default">ENVIAR</h:commandLink>
 			
 			                        <div id="msgInfo"></div>
 			                      </form>	
