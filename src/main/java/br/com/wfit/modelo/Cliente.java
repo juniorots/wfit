@@ -5,12 +5,7 @@
  */
 package br.com.wfit.modelo;
 
-import static javax.persistence.TemporalType.DATE;
-
-import java.util.Date;
-
 import javax.persistence.Entity;
-import javax.persistence.Temporal;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
@@ -32,9 +27,7 @@ public class Cliente extends DomainObject {
 	@Transient
 	private String confirmaSenha;
 	
-	@Temporal(DATE)
-    private Date dtNascimento;
-	
+	@Transient
 	private String mensagem;
 
 	public String getMensagem() {
@@ -76,13 +69,4 @@ public class Cliente extends DomainObject {
 	public void setConfirmaSenha(String confirmaSenha) {
 		this.confirmaSenha = confirmaSenha;
 	}
-
-	public Date getDtNascimento() {
-		return dtNascimento;
-	}
-
-	public void setDtNascimento(Date dtNascimento) {
-		this.dtNascimento = dtNascimento;
-	}
-
 }

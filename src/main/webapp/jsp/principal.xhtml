@@ -4,7 +4,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:icecore="http://www.icefaces.org/icefaces/core"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <ui:composition template="/WEB-INF/template/mestre.xhtml">
         
@@ -14,8 +14,9 @@
         -->
         <ui:define name="centro">
             <div class="conteudo">
-                <h:form id="form">
 					<ui:include src="../WEB-INF/template/menu.xhtml"/>
+					
+					<div id="msgInfo"></div>
 					
 					<section id="intro" class="slidepage image-background">
 			        <div class="bgWrap dimBg patternBg">
@@ -274,30 +275,28 @@
 			                        Slovak republic<br/>
 			                        <br/>
 			                        <abbr title="Phone">+421(0) 555 555 555</abbr><br/>
-			                        <a href="mailto:fresh@support.com">fresh@support.com</a><br/>
+			                        <a href="mailto:fresh@support.com">wfit.default@gmail.com</a><br/>
 			                      </address>
 			                    </div>
 			                    <div class="col-md-8 col-sm-8">
-			                      <form class="js-contact-form" role="form" method="post" >
+			                      <h:form class="js-contact-form" role="form" method="post" >
 			                        <div class="form-group name">
-			                          <input name="nome" type="name" class="form-control name" id="nome" placeholder="Nome..." 
+			                          <h:inputText class="form-control name" id="nome" placeholder="Nome..." 
 			                          	value="#{clienteMB.cliente.nome}"/>
 			                          <!-- <span class="form-error">please enter name</span> -->
 			                        </div>
 			                        <div class="form-group email">
-			                          <input name="email" type="email" class="form-control email" id="email" placeholder="E-mail..." 
+			                          <h:inputText class="form-control email" id="email" placeholder="E-mail..." 
 			                          	value="#{clienteMB.cliente.email}"/>
 			                        </div>
 			                        <div class="form-group message">
-			                          <textarea name="mensagem" class="form-control message" rows="4" placeholder="mensagem" 
-			                          	value="#{clienteMB.cliente.mensagem}"></textarea>
+			                          <h:inputTextarea id="mensagem" class="form-control message" rows="4" placeholder="mensagem" 
+			                          	value="#{clienteMB.cliente.mensagem}"></h:inputTextarea>
 			                          <!-- <span class="form-error">please enter message</span> -->
 			                        </div>
 			                        
 			                        <h:commandLink action="#{clienteMB.enviarNotificacao}" class="btn btn-default">ENVIAR</h:commandLink>
-			
-			                        <div id="msgInfo"></div>
-			                      </form>	
+			                      </h:form>	
 			                    </div>
 			                  </div>
 			                </div>
@@ -309,7 +308,6 @@
 			        </div>
 			      </section>
 				      
-	            </h:form>
             </div>
         </ui:define>
     </ui:composition>

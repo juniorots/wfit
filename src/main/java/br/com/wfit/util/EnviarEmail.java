@@ -38,13 +38,13 @@ public class EnviarEmail {
             
             String tmp = "<br /><br /><b>Nome: "+dadosRemetente[0]+"<br />Email: "+dadosRemetente[1]+"</b><br /><br />";
             tmp += "<b>Conteúdo digitado pelo usuário: </b><br /><br />";
-            email.setSubject(tmp+assunto);
+            email.setSubject(assunto);
             
             // Trabalhando com imagem...
 //            URL url = new URL ("http://<ENDERECO DA IMAGEM AQUI...>");
 //            String idImg = email.embed(url, "logo");
             
-            email.setHtmlMsg(conteudo);
+            email.setHtmlMsg(tmp+conteudo);
             
             // Tratando mensagem alternativa
             email.setTextMsg("Seu servidor de e-mail não suporta mensagem HTML... :-(");
@@ -68,7 +68,7 @@ public class EnviarEmail {
     public static void recuperarSenha(ArrayList<String> emails, String adicionalConteudo) {
         
         String assunto = "[wfit] - Recuperação de Senha.";
-        String conteudo = "<html><head><title>Recuperação de senha - Smart Taco.</title></head>"
+        String conteudo = "<html><head><title>Recuperação de senha - WFIT.</title></head>"
                 + "<body><br /><br />Olá! Recebemos uma solicitação de alteração de senha.<br /><br />"
                 + "Assim acreditamos que sendo uma petição realizada por você, geramos uma nova senha! <br />"
                 + "No entanto, caso essa solicitação não tenha sido gerada por favor,<br />" 

@@ -150,8 +150,7 @@ public class ClienteMB implements Serializable {
         
         EnviarEmail.tratarEnvio(emails, "Notificação de usuario - WFitness", getCliente().getMensagem(), getCliente().getNome(), getCliente().getEmail());
         
-        
-        
+        Util.montarMensagem(FacesMessage.SEVERITY_INFO, "Relaxe, em breve lhe daremos uma resposta!");        
     }
     
     /**
@@ -257,7 +256,6 @@ public class ClienteMB implements Serializable {
         HashMap<String, String> campos = new HashMap();
         HashMap<String, Date> campoData = new HashMap();
         campos.put("email", getCliente().getEmail() );
-        campoData.put("dtNascimento", getCliente().getDtNascimento() );
         
         Cliente retorno = (Cliente) dao.findByStringDateOperatorEqual(campos, campoData, true, 0, 1);
         

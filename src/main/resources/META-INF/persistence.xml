@@ -7,9 +7,9 @@
   <persistence-unit name="databaseDefault" transaction-type="RESOURCE_LOCAL">
 
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-    <jta-data-source>java:/jdbc/wfit</jta-data-source>
     
 	<!-- NOTA: Bloco de comentario que devera ser utulizado junto com a secao 
+    <jta-data-source>java:/jdbc/wfit</jta-data-source>
 	do jUnit para o devido acesso a base.
 	-->
 	<class>br.com.wfit.modelo.Cliente</class>
