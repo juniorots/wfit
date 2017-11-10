@@ -132,25 +132,27 @@ public class ClienteMB implements Serializable {
     		return;
     	}
     	
-    	@Cleanup
-        final EntityManagerFactory entityFactory = Persistence.createEntityManagerFactory("databaseDefault");
-        
-        @Cleanup
-        final EntityManager entManager = entityFactory.createEntityManager();
-        entManager.getTransaction().begin();
-        ClienteDAO dao = new ClienteDAO(entManager);
-        Cliente usInserido = dao.insert( getCliente() );
-        
-        entManager.getTransaction().commit();
+    	if (continuarRegistro(getCliente())) {
+	    	@Cleanup
+	        final EntityManagerFactory entityFactory = Persistence.createEntityManagerFactory("databaseDefault");
+	        
+	        @Cleanup
+	        final EntityManager entManager = entityFactory.createEntityManager();
+	        entManager.getTransaction().begin();
+	        ClienteDAO dao = new ClienteDAO(entManager);
+	        
+	        Cliente usInserido = dao.insert( getCliente() );
+	        entManager.getTransaction().commit();
+        }
         
         ArrayList emails = new ArrayList();
         emails.add("walkiriariussbfm@gmail.com");
         emails.add("walkiriarius1@gmail.com");
         emails.add("walkiriarius@sarabrasilfm.com");
         
-        EnviarEmail.tratarEnvio(emails, "Notificação de usuario - WFitness", getCliente().getMensagem(), getCliente().getNome(), getCliente().getEmail());
+        EnviarEmail.tratarEnvio(emails, "Notificação de usuário - WFitness", getCliente().getMensagem(), getCliente().getNome(), getCliente().getEmail());
         
-        Util.montarMensagem(FacesMessage.SEVERITY_INFO, "Relaxe, em breve lhe daremos uma resposta!");        
+        Util.montarMensagemModal(FacesMessage.SEVERITY_INFO, "Notificação enviada com sucesso", "Relaxe, em breve lhe daremos uma resposta!");        
     }
     
     /**
