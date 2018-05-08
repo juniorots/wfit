@@ -8,7 +8,7 @@
 
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     
-	<!-- NOTA: Bloco de comentario que devera ser utulizado junto com a secao 
+	<!-- NOTA: Bloco de comentario que devera ser utilizado junto com a secao 
     <jta-data-source>java:/jdbc/wfit</jta-data-source>
 	do jUnit para o devido acesso a base.
 	-->

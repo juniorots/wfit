@@ -128,7 +128,7 @@ public class ProdutoDAOTest {
       dao.insert(prod9);
       
       
-//      entityManager.getTransaction().commit();
+      entityManager.getTransaction().commit();
   }
   
 }

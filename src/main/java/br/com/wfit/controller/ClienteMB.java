@@ -1,22 +1,24 @@
 package br.com.wfit.controller;
 
-import br.com.wfit.base.ClienteDAO;
-import br.com.wfit.modelo.Cliente;
-import br.com.wfit.util.Constantes;
-import br.com.wfit.util.EnviarEmail;
-import br.com.wfit.util.Util;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import br.com.wfit.base.ClienteDAO;
+import br.com.wfit.modelo.Cliente;
+import br.com.wfit.util.Constantes;
+import br.com.wfit.util.EnviarEmail;
+import br.com.wfit.util.Util;
 import lombok.Cleanup;
 
 /**
